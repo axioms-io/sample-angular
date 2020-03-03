@@ -1,0 +1,24 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+// Override default variables before the import
+$body-bg: #f7fbfa;
+$body-color: rgba(0, 0, 0, .65);
+$theme-colors: ( "primary": #38d39f, "danger": #ff7161, "success": #38d39f);
+@import '../node_modules/bootstrap/scss/bootstrap';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.nav-link img {
+    width: 1.5em;
+}
