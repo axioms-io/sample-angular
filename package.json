@@ -27,6 +27,7 @@
         "convict": "^5.2.0",
         "dotenv": "^8.2.0",
         "jquery": "^3.4.1",
+        "node-jose-browserify": "^1.1.14",
         "popper.js": "^1.16.1",
         "rxjs": "~6.5.4",
         "tslib": "^1.10.0",
@@ -58,8 +59,14 @@
         "typescript": "~3.7.5"
     },
     "browser": {
-        "net": false,
         "fs": false,
-        "tls": false
+        "http": false,
+        "https": false,
+        "net": false,
+        "path": false,
+        "crypto": false,
+        "stream": false,
+        "tls": false,
+        "zlib": false
     }
 }

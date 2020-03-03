@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth } from '@axioms/web-js';
+import Auth from '@axioms/web-js';
 import { environment } from '../environments/environment';
 import config from '../../config.json';
 
