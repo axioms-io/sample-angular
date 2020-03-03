@@ -47,10 +47,10 @@ ng serve
 
 ## Build
 
-Run `ng build` to build the project.
+Run `ng build` or `ng build --prod` to build the project.
 
 ## Build and deploy to Netlify
 
-1. Simply fork this repository and add your configuration file `config.json` in root of your project
+1. Simply fork this repository and add your configuration file `config.json` in root of this project.
    
 2. Connect your Github project in Netlify and configure build and deploy for your site and you are good to go.
