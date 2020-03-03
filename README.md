@@ -21,24 +21,26 @@ npm install
 ```
 
 ## Update config
-Either update `.env.production` or create a `.env.local` to add following configs. If you are using Netlify for deployment and build you can use their environment variables (see Netlify details at the end).
+Rename `sample-config.json` to `config.json` and update following settings.
 
 - `Your-App-Domain` is where you going to host or run your app. It can be `localhost` or a domain
 - `Your_Client_ID` is your client id which can be obtained from the Axioms Dashboard -> Clients section
 - `<Your_Slug>.axioms.io` is your Axioms tenant default domain or custom domain mapped to Axioms servers
 
 ```
-ANGULAR_APP_Client_Id=<Your_Client_ID>
-ANGULAR_APP_Axioms_Domain=<Your_Slug>.axioms.io
-ANGULAR_APP_Redirect_Uri=https://<Your-App-Domain>/callback
-ANGULAR_APP_Post_Logout_Uri=https://<Your-App-Domain>/login
+{
+    "axioms_domain": "<Your_Slug>.axioms.io",
+    "redirect_uri": "https://<Your-App-Domain>/callback",
+    "post_logout_uri": "http://localhost:4200/login",
+    "client_id": "https://<Your-App-Domain>/login"
+}
 ```
 
 
 ### Compile and hot-reload for local development
 
 ```
-ng serve --open --port 3000
+ng serve
 ```
 
 ### Compile and minify for production
@@ -49,11 +51,6 @@ Run `ng build` to build the project.
 
 ## Build and deploy to Netlify
 
-1. Simply fork this repository and connect your Github project in Netlify.
-
-2. Configure your build command and output directory and you are good to go.
-
-
-### Build Settings
-
-### Environment Settings
+1. Simply fork this repository and add your configuration file `config.json` in root of your project
+   
+2. Connect your Github project in Netlify and configure build and deploy for your site and you are good to go.
