@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import Auth from '@axioms/web-js';
-import { environment } from '../environments/environment';
+import { Auth } from '@axioms/web-js';
 import config from '../../config.json';
 
 @Injectable({providedIn: 'root'})
