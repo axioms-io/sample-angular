@@ -38,18 +38,50 @@ Rename `sample-config.json` to `config.json` and update following settings.
 }
 ```
 
+## Enable crypto-js
+In root of your Angular project create `enable-crypto.js` and add following,
+
+```
+const fs = require('fs');
+const f = 'node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs/browser.js';
+
+fs.readFile(f, 'utf8', function(err, data) {
+    if (err) {
+        return console.log(err);
+    }
+    var result = data.replace(/node: false/g, 'node: {crypto: true, stream: true}');
+
+    fs.writeFile(f, result, 'utf8', function(err) {
+        if (err) return console.log(err);
+    });
+});
+```
+
+## Update scripts
+Update `scripts` section of your `package.json`,
+
+```
+    "scripts": {
+        "ng": "ng",
+        "start": "node enable-crypto.js && ng serve",
+        "build": "node enable-crypto.js && ng build",
+        "test": "ng test",
+        "lint": "ng lint",
+        "e2e": "ng e2e"
+    },
+```
 
 ### Compile and hot-reload for local development
 
 ```
-ng serve
+npm start
 ```
 
 ### Compile and minify for production
 
 ## Build
 
-Run `ng build` or `ng build --prod` to build the project.
+Run `npm run-script build` or `npm run-script build --prod` to build the project.
 
 ## Build and deploy to Netlify
 

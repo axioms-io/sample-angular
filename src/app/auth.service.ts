@@ -8,12 +8,12 @@ export class AuthService {
 
   $auth() {
     return new Auth({
-      axioms_domain: config.axioms_domain,
-      response_type: config.response_type,
-      redirect_uri: config.redirect_uri,
-      post_logout_uri: config.post_logout_uri,
-      client_id: config.client_id,
-      scope: config.scope,
+      axioms_domain: process.env.NG_APP_Axioms_Domain,
+      response_type: process.env.NG_APP_Response_Type,
+      redirect_uri: process.env.NG_APP_Redirect_Uri,
+      post_logout_uri: process.env.NG_APP_Post_Logout_Uri,
+      client_id: process.env.NG_APP_Client_Id,
+      scope: process.env.NG_APP_Scope,
       post_login_navigate: "/dashboard",
     });
   }
