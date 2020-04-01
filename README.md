@@ -21,7 +21,7 @@ npm install
 ```
 
 ## Update config
-Rename `sample-config.json` to `config.json` and update following settings.
+Add `.env` in project root to add following configs. If you are using Netlify for deployment and build you can use their environment variables (see Netlify details at the end).
 
 - `Your-App-Domain` is where you going to host or run your app. It can be `localhost` or a domain
 - `Your_Client_ID` is your client id which can be obtained from the Axioms Dashboard -> Clients section
@@ -38,53 +38,36 @@ Rename `sample-config.json` to `config.json` and update following settings.
 }
 ```
 
-## Enable crypto-js
-In root of your Angular project create `enable-crypto.js` and add following,
-
-```
-const fs = require('fs');
-const f = 'node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs/browser.js';
-
-fs.readFile(f, 'utf8', function(err, data) {
-    if (err) {
-        return console.log(err);
-    }
-    var result = data.replace(/node: false/g, 'node: {crypto: true, stream: true}');
-
-    fs.writeFile(f, result, 'utf8', function(err) {
-        if (err) return console.log(err);
-    });
-});
-```
-
-## Update scripts
-Update `scripts` section of your `package.json`,
-
-```
-    "scripts": {
-        "ng": "ng",
-        "start": "node enable-crypto.js && ng serve",
-        "build": "node enable-crypto.js && ng build",
-        "test": "ng test",
-        "lint": "ng lint",
-        "e2e": "ng e2e"
-    },
-```
+We recommend to use `code` response type (Authorization code flow with PKCE). For more supported response type options please review  `web-js` documentation.
 
 ### Compile and hot-reload for local development
 
 ```
-npm start
+ng serve
 ```
+
 
 ### Compile and minify for production
 
-## Build
+Build using `.env`
 
-Run `npm run-script build` or `npm run-script build --prod` to build the project.
+```
+ng build --prod
+```
 
 ## Build and deploy to Netlify
 
-1. Simply fork this repository and add your configuration file `config.json` in root of this project.
-   
-2. Connect your Github project in Netlify and configure build and deploy for your site and you are good to go.
+1. Simply fork this repository and connect your Github project in Netlify.
+
+2. Configure your build command and output directory and you are good to go.
+
+
+### Build Settings
+Build command: `ng build` or `ng build --prod`
+
+Publish directory: `build/sample-angular`
+
+![Build settings](build_settings.jpg)
+
+### Environment Settings
+![Build Environment settings](build_env_settings.jpg)
