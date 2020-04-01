@@ -32,7 +32,9 @@ Rename `sample-config.json` to `config.json` and update following settings.
     "axioms_domain": "<Your_Slug>.axioms.io",
     "redirect_uri": "https://<Your-App-Domain>/callback",
     "post_logout_uri": "http://localhost:4200/login",
-    "client_id": "https://<Your-App-Domain>/login"
+    "client_id": "https://<Your-App-Domain>/login",
+    "response_type": "code",
+    "scope": "openid profile"
 }
 ```
 

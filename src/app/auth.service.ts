@@ -9,11 +9,11 @@ export class AuthService {
   $auth() {
     return new Auth({
       axioms_domain: config.axioms_domain,
-      response_type: "id_token token",
+      response_type: config.response_type,
       redirect_uri: config.redirect_uri,
       post_logout_uri: config.post_logout_uri,
       client_id: config.client_id,
-      scope: "openid profile",
+      scope: config.scope,
       post_login_navigate: "/dashboard",
     });
   }
