@@ -13,7 +13,7 @@ export class AuthService {
       post_logout_uri: process.env.NG_APP_Post_Logout_Uri,
       client_id: process.env.NG_APP_Client_Id,
       scope: process.env.NG_APP_Scope,
-      post_login_navigate: "/dashboard",
+      post_login_navigate: process.env.NG_APP_Post_Login_Navigate,
     });
   }
 }

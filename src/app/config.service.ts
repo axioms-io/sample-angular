@@ -1,3 +1,4 @@
+/*
 import { convict } from './_config/convict';
 
 export class ConfigService {
@@ -7,3 +8,4 @@ export class ConfigService {
     return this.config;
   }
 }
+*/

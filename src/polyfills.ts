@@ -1,11 +1,13 @@
 declare var global: any;
 
+/*
 (window as any).global = window;
 import { Buffer } from 'buffer';
 global.Buffer = global.Buffer || Buffer;
 
 import * as process from 'process';
 (window as any).process = process;
+*/
 
 /***************************************************************************************************
  * Load `$localize` onto the global scope - used if i18n tags appear in Angular templates.

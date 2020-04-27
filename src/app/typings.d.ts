@@ -10,7 +10,8 @@ interface Env {
     NG_APP_Redirect_Uri: string,
     NG_APP_Post_Logout_Uri: string,
     NG_APP_Response_Type: string,
-    NG_APP_Scope: string
+    NG_APP_Scope: string,
+    NG_APP_Post_Login_Navigate: string
 }
 
 interface GlobalEnvironment {
